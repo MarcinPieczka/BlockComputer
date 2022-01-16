@@ -53,7 +53,7 @@ class Config:
         if time_block_end:
             time_block_end = parser.parse(time_block_end)
 
-        if time_block_end < time_block_start:
+        if time_block_end and time_block_start and time_block_end < time_block_start:
             time_block_end += timedelta(days=1)
 
         return Options(
